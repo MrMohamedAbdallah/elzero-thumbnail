@@ -2,7 +2,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-file = "elzero.jpg";
+file = "elzero.jpg"
 videoName = "Tuples & Methods \nPart 2"
 videoNumber = "25"
 
