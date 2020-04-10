@@ -2,16 +2,30 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-file = "elzero.jpg"
-videoName = "Tuples & Methods \nPart 2"
-videoNumber = "25"
+import argparse
+
+
+parser = argparse.ArgumentParser(description="Generate Elzero python course thumbnail.")
+
+parser.add_argument("-f", "--file", help="Original thumbnail to write on it.")
+parser.add_argument("-s", "--name", help="The name of the video", required=True)
+parser.add_argument("-n", "--number", help="The number of the video", type=int, required=True)
+parser.add_argument("-o", "--output", help="Output file name")
+
+# Prase the arguments here
+args = parser.parse_args()
+
+file =  args.file if args.file else "elzero.jpg"
+videoName = args.name
+videoNumber = str(args.number)
+
 
 # Adding # sign and zeroz
 if len(videoNumber) < 3:
     videoNumber = "#" + ((3 - len(videoNumber)) * "0") + videoNumber
 
 
-outputFile = "output/elzero_output.jpg"
+outputFile = args.output + ".jpg" if args.output else "output/elzero_output.jpg"
 
 
 
