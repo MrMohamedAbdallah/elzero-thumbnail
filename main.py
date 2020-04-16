@@ -54,4 +54,4 @@ draw.text(vidoeNumberPosition, videoNumber, videoNumberColor, font=videoNumberFo
 img.save(outputFile)
 
 # Successfull message
-print("Thumbnail generated successfully for {} {}".format(videoName, videoNumber))
+print(f"Thumbnail generated successfully for {videoName} {videoNumber}")
